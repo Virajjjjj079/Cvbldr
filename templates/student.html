@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>amber</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+body{
+      background-color: #141412;
+      margin-left: 20px;
+      margin-right: 20px;
+}
+.heading{
+      color: whitesmoke;
+}
+
+.fill{
+	font-size: 30px;
+      
+	color: #EA783B;
+      
+}
+
+.col-xs-12{
+      padding-top: 10px;
+      margin-top: 10px;
+}
+	
+
+	input[type=text], select, .input-field {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+
+input[type=url],select,.input-field{
+      width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+body  {
+    background-image: url("static/img/re.jpg");
+    
+
+}
+
+input[type=submit], .input-field{
+    width: 70%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.personaldetails{
+      padding-bottom: 4vmin;
+      height: 100%;
+}
+
+.educational{
+      padding-bottom: 4vmin;
+      height: 100%;
+}
+
+.projects{
+      padding-bottom: 4vmin;
+      height: 100%;
+}
+
+#submitbtn{
+      height: 30px;
+      width: 70px;
+      background-color: red;
+      color: whitesmoke;
+      border-radius: 0.5rem;
+      margin-top: 15px;
+}
+
+h3{
+      color: #EA783B;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+
+}
+.fields{
+      display: flex;
+      justify-content: space-between;
+}
+
+.skills{
+      margin-top: 10px;
+}
+.menulist{
+      position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.menulist ul{
+      display: flex;
+      font-size: 17px;
+      flex-wrap: wrap;
+      list-style-type: none;
+      
+      
+      
+}
+
+ul li{
+      margin-right: 20px;
+}
+
+/*navbar code */
+.topnav {
+  
+  overflow: hidden;
+ 
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.nav{
+	float: right;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+	font-weight: bold;
+  color: #EA793C;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .menulist ul{
+      display: block;
+  }
+}
+
+.rights{
+	color: whitesmoke;
+	text-align: center;
+	font-size: 15px;
+	
+}
+
+</style>
+
+<header class="header">
+      <div class="topnav" id="myTopnav">
+            <a class="active">CV Bldr*</a>
+            
+            <a href="/">Home</a>
+            <a href="/student">Create Resume</a>
+            <a href="/jc">Post a Job</a>
+            <a href="/joblist">Job List</a>
+            <a href="/contact">Contact</a>
+      
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+        </div>
+</header>
+<hr>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<center><b><i class="fill">Fill your details:</i></b></center>
+		</div>
+	</div>
+</div>
+<hr><!--method="post"   action="{{ url_for('hello') }}" -->
+
+
+	<div class="container">
+		<div class="row">
+			 <div class="col-xs-12">
+			 	<form id="myForm" method="post"   action="{{ url_for('hello') }}" >
+                              <br>
+                              
+                  <div class="personaldetails" id="personaldetails">
+                        <h3>Personal Details</h3>
+                  <label for="yourname" class="heading" >Full Name: </label>
+                  <input type="text" name="yourname" placeholder="ex: Amber Guatam" required/><br />
+		   <label for="youremail" class="heading">E-mail:</label>
+                  <input type="text" name="youremail" placeholder="ex: exmaple@something.com" required/><br />
+                  <label for="youremail" class="heading">Contact:</label>
+                  <input type="text" name="contact" placeholder="9876543210"  /><br />
+		
+			<label for="youremail" class="heading">Complete address:</label>
+                  <input type="text" name="address" placeholder="ex: H.NO 3126 Rajeev Chowk, Gurgaon, Haryana(India)"   /><br />
+			<label for="youremail" class="heading">Date of birth:</label>
+                  <input type="text" name="dob" placeholder="ex: D/M/Y"  /><br />
+                  <label for="youremail" class="heading">Languages known:</label>
+                  <input type="text" name="lang" placeholder="ex: English, Hindi, French"  /><br />
+            </div>
+            <hr>
+            <div id="socialLinks"></div>
+            <div class="socialLinks" id="socialLinks">
+                  <h3>SOCIAL LINKS</h3>
+                  <Label for="link" class="heading">Linkedin Link</Label>
+                  <input name="link" type="url"  typeplaceholder="Ex. Url...">
+                  <Label for="git" class="heading">Github Link</Label>
+                  <input  name="git" type="url" placeholder="Ex. Url...">
+            </div>
+            <hr>
+            <div id="experience"></div>
+            <div class="experience" id="experience">
+               <h3>EXPERIENCE</h3>
+               <label for="company" class="heading">Company name:</label>
+                  <input type="text" name="company" placeholder="ex: Capgemini"  /><br />
+                  <label for="cp" class="heading">Job profile:</label>
+                  <input type="text" name="cp" placeholder="ex: Frontend Developer,Database administrator"  /><br />
+                  <label for="cl" class="heading">Location:</label>
+                  <input type="text" name="cl" placeholder="ex: Mumbai"  /><br />
+                  <label for="cy" class="heading">Year:</label>
+                  <input type="text" name="cy" placeholder="ex: 2015-2019"  /><br />
+                  <div class="fields">
+                        <a href=""  id="addfield2">Add Field</a> 
+                        <a href=""  id="removefield2">Remove Field</a> 
+                  </div>
+                  <input type="hidden" name="fields_added2" id="fieldsAddedInput2" value="0">
+            </div>
+            <hr>
+            <div class="educational" id="educational">
+            <div class="field-container"   >
+            <div class="educational 1"  >
+                  <h3>Educational Details</h3>
+                  
+			
+			<label for="youremail" class="heading">College Name:</label>
+                  <input type="text" name="gb" placeholder="ex: Amity Unuversity, Haryana"  /><br />
+			<label for="youremail" class="heading">Course:</label>
+                  <input type="text" name="gs" placeholder="ex: B.tech (CSE)" /><br />
+                  <label for="youremail" class="heading">CGPA/Percentage:</label>
+                  <input type="text" name="cgpa" placeholder="ex: 7.2 or 68%"  /><br />
+			<label for="youremail" class="heading">Location:</label>
+                  <input type="text" name="gp" placeholder="mumbai,india"  /><br />
+			<label for="youremail" class="heading">Year:</label>
+                  <input type="text" name="gm" placeholder="ex: 2015-2019" /><br />
+                  <div class="fields">
+                        <a href=""  id="addfield">Add Field</a> 
+                        <a href=""  id="removefield">Remove Field</a> 
+                  </div>
+                  <input type="hidden" name="fields_added" id="fieldsAddedInput" value="0">
+
+                  
+
+
+            </div>
+      
+      </div>
+</div>
+            <hr>
+            
+            <div id = "projects">
+            <div class="projects  " id="inputFields ">
+                  <h3>Projects</h3>
+			<label for="projects" class="heading">Your projetcs in detail:</label>
+                  <input  type="text" name="projects" placeholder="Your complete project details"/><br />
+                  <label for="projects" class="heading">Project Link:</label>
+                  <input type="url" name="links" placeholder="Deployed link" /><br />
+                  <div class="fields">
+                        <a href=""  id="addfield3">Add Field</a> 
+                        <a href=""  id="removefield3">Remove Field</a> 
+                  </div>
+                  <input type="hidden" name="fields_added3" id="fieldsAddedInput3" value="0">    
+            </div>
+                  <div class="skills">
+                        <h3>Skills</h3>
+                    
+			<label for="youremail" class="heading skills">Your Skills:</label>
+                  <input type="text" name="skills" placeholder="Ex. JAVA, REACT, JAVASCRIPT" /><br />
+            </div>
+            
+                  <center><button  type="submit" id="submitbtn" onclick="openResume()" >Submit</button> </center>
+                        
+                        
+                  </a>
+                </form>
+			 </div>
+		</div>
+	</div>
+</div>
+<hr>
+		  <footer>
+			<div class="connect">
+				
+				<p class="rights">Copyright @Viraj Ghadigaonkar, All Rights Reserved</p>
+			</div>
+			
+		  </footer>
+<script>
+function openResume(){
+        submit = document.getElementById("submitbtn").addEventListener("click", function() {
+
+
+            
+    
+    
+    window.location.href = "hello";
+});
+}
+
+var fieldsAdded = false; 
+var fieldsAdded2 = false;
+var fieldsAdded3 = false;
+
+//for education details
+document.getElementById('addfield').addEventListener('click', function (event) {
+        event.preventDefault();
+        fieldsAdded = true;
+        document.getElementById('fieldsAddedInput').value = 1; // Update the hidden input value
+
+        var labelContent = ["College Name:", "Course:","CGPA/Percentage:" , "Location:", "Year:"];
+        var inputPlaceholders = ["ex: Amity Unuversity, Haryana","ex: 7.2 or 68%" , "ex: BTech (CSE)", "ex: Mumbai", "ex: 2019-2022"];
+        // Assuming you want to add 4 more fields similar to existing ones
+        var container = document.querySelector('.field-container .educational');
+        for (var i = 0; i < 5; i++) {
+            var label = document.createElement('label');
+            label.setAttribute('for', 'newField' + i);
+            label.className = 'heading';
+            
+            label.textContent = labelContent[i];
+            
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'newField' + i;
+            input.placeholder = inputPlaceholders[i];
+            
+            
+            container.appendChild(label);
+            container.appendChild(input);
+            container.appendChild(document.createElement('br'));
+        }
+    });
+
+
+    document.getElementById('removefield').addEventListener('click', function (event) {
+        event.preventDefault();
+        if (fieldsAdded) {
+        fieldsAdded = false;
+        document.getElementById('fieldsAddedInput').value = 0; // Update the hidden input value
+
+        var container = document.querySelector('.field-container .educational');
+        // Determine the starting index of the last four elements to remove
+
+        //var startIndex = container.children.length - 4;
+        // Remove last four elements
+        //for (var i = container.children.length - 1; i >= startIndex; i--) {
+           // container.removeChild(container.children[i]);
+            //container.removeChild(container.children[i - 1]);
+        //}
+        var pairsAdded = 5; // Assuming 4 pairs were added
+        // Remove label and input pairs
+        for (var i = 0; i < pairsAdded; i++) {
+            container.removeChild(container.lastChild); // Remove input
+            container.removeChild(container.lastChild); // Remove label
+            container.removeChild(container.lastChild); // Remove br element
+        }
+        save();
+      } else {
+        // Optionally, provide feedback that fields need to be added before removal
+        alert("Please add fields before removing.");
+    }
+    });
+
+    
+
+    /*function submitForm() {
+      
+        if (fieldsAdded) {
+            // If fields are added, submit the form
+            document.getElementById("myForm").submit();
+        } else {
+            // If fields are not added, show a message or take appropriate action
+            //alert("Please add fields using 'Add Field' first.");
+        }
+    }*/
+//education details end
+
+
+//work experience starts here
+document.getElementById('addfield2').addEventListener('click', function (event) {
+        event.preventDefault();
+        fieldsAdded2 = true;
+        document.getElementById('fieldsAddedInput2').value = 1; // Update the hidden input value
+
+        var labelContent = ["Company Name:", "Job profile:", "Location:", "Year:"];
+        var inputPlaceholders = ["ex: L&T", "ex: Frontend Developer,Database administrator ", "ex: Mumbai", "ex: 2019-2025"];
+        // Assuming you want to add 4 more fields similar to existing ones
+        var container = document.querySelector('.experience');
+        for (var i = 0; i < 4; i++) {
+            var label = document.createElement('label');
+            label.setAttribute('for', 'newjob' + i);
+            label.className = 'heading';
+            
+            label.textContent = labelContent[i];
+            
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'newjob' + i;
+            input.placeholder = inputPlaceholders[i];
+            
+            
+            container.appendChild(label);
+            container.appendChild(input);
+            container.appendChild(document.createElement('br'));
+        }
+    });
+
+    document.getElementById('removefield2').addEventListener('click', function (event) {
+        event.preventDefault();
+        if (fieldsAdded2) {
+        fieldsAdded2 = false;
+        document.getElementById('fieldsAddedInput2').value = 0; // Update the hidden input value
+
+        var container = document.querySelector('.experience');
+        // Determine the starting index of the last four elements to remove
+
+        /*var startIndex = container.children.length - 4;
+        // Remove last four elements
+        for (var i = container.children.length - 1; i >= startIndex; i--) {
+            container.removeChild(container.children[i]);
+        }*/
+        var pairsAdded = 4; // Assuming 4 pairs were added
+        // Remove label and input pairs
+        for (var i = 0; i < pairsAdded; i++) {
+            container.removeChild(container.lastChild); // Remove input
+            container.removeChild(container.lastChild); // Remove label
+            container.removeChild(container.lastChild); // Remove br element
+        }
+        save();
+      } else {
+        // Optionally, provide feedback that fields need to be added before removal
+        alert("Please add fields before removing.");
+    }
+    });
+//work experience ends here
+
+//project starts here
+document.getElementById('addfield3').addEventListener('click', function (event) {
+        event.preventDefault();
+        fieldsAdded3 = true;
+        document.getElementById('fieldsAddedInput3').value = 1; // Update the hidden input value
+
+        var labelContent = ["Your projects in detail:","Project Link:"];
+        var inputPlaceholders = ["Complete Project details","Deployed link"];
+        // Assuming you want to add 4 more fields similar to existing ones
+        var container = document.querySelector('.projects');
+        for (var i = 0; i < 2; i++) {
+            var label = document.createElement('label');
+            label.setAttribute('for', 'newp' + i);
+            label.className = 'heading';
+            
+            label.textContent = labelContent[i];
+            
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'newp' + i;
+            input.placeholder = inputPlaceholders[i];
+            
+            
+            container.appendChild(label);
+            container.appendChild(input);
+            container.appendChild(document.createElement('br'));
+        }
+    });
+
+    document.getElementById('removefield3').addEventListener('click', function (event) {
+        event.preventDefault();
+        if (fieldsAdded3) {
+        fieldsAdded3 = false;
+        document.getElementById('fieldsAddedInput3').value = 0; // Update the hidden input value
+
+        var container = document.querySelector('.projects');
+        // Determine the starting index of the last four elements to remove
+
+        /*var startIndex = container.children.length - 2;
+        // Remove last four elements
+        for (var i = container.children.length - 1; i >= startIndex; i--) {
+            container.removeChild(container.children[i]);
+        }*/var pairsAdded = 2; // Assuming 4 pairs were added
+        // Remove label and input pairs
+        for (var i = 0; i < pairsAdded; i++) {
+            container.removeChild(container.lastChild); // Remove input
+            container.removeChild(container.lastChild); // Remove label
+            container.removeChild(container.lastChild); // Remove br element
+        }
+        save();
+      } else {
+        // Optionally, provide feedback that fields need to be added before removal
+        alert("Please add fields before removing.");
+    }
+    });
+
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+</script>
+</body>
+</html>

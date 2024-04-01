@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Template</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Content Section */
+        .content_section_text {
+            margin-top: 2px;
+        }
+
+        .content_section_text p {
+            margin-bottom: 5px;
+        }
+
+        /* Headings */
+        .section_header {
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 5px;
+            
+        }
+
+        /* Table */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* Reduce table width */
+            margin: 0 auto; /* Make table responsive by default */
+        }
+
+        th, td {
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Remove underline from links (ATS may not recognize them) */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Button Styles */
+        #generate-pdf-btn {
+            background-color: red;
+            color: whitesmoke;
+            margin-top: 10px;
+            height: 30px;
+            width: 60px;
+            margin-bottom: 20px;
+            border: none;
+            padding: 5px;
+            font-size: 12pt;
+            cursor: pointer;
+        }
+
+        .main_page{
+          max-width: 100%; /* Reduce main page width */
+            height: auto;
+            margin: 0 auto; /* Center main page horizontally */
+            padding: 10px;
+            background-color: white;
+            border-color: #02182B;
+            box-sizing: 2px;
+        }
+
+        /* Responsive Styles */
+        
+        
+
+        
+
+        /* Print styles (optional) */
+        @media print {
+            .section_header {
+                font-size: 16pt;
+            }
+            .content_section_text p {
+                font-size: 11pt;
+            }
+
+            .noPrint{
+                display:none;
+  }
+        }
+
+.head{
+  font-size: 18px;
+}
+.links{
+    text-decoration: underline;
+}
+
+.social{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.education{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    margin-right: 10px;
+}
+
+.clg{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    
+}
+
+@media only screen and (max-width: 768px) {
+            .content_section_text {
+                padding: 10px; /* Add padding for mobile view */
+            }
+
+            .section_header {
+                font-size: 12pt; /* Adjust heading size for smaller screens */
+            }
+
+            table {
+                font-size: 10pt; /* Adjust font size for table in smaller screens */
+            }
+
+            .main_page {
+                max-width: 100%; 
+                /* Set full width on smaller screens */
+                padding: 5px; /* Adjust padding for smaller screens */
+            }
+
+            #generate-pdf-btn {
+                width: 100%; /* Make button full width on smaller screens */
+            }
+
+            .social{
+               display: inline-block;
+
+            }
+    
+}
+
+.name{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#generate_pdf{
+background-color: red;
+color: white;
+border-radius: 0.5rem;
+margin-bottom: 2vh;
+padding: 5px;
+margin-top: 10px;
+	width: 90px;
+	height: 40px;
+	font-size: 1rem;
+}
+
+@media only screen and (max-width: 260px){
+    .name{
+        font-size: 20px;
+    }
+}
+    </style>
+   
+</head>
+<body>
+
+<div class="main_page">
+    <div class="content_section_text data" id="resume">
+        <p>
+            <!--<strong class="section_header ">Name:</strong>--> <span class="name">{{name}}</span> <br>
+            <strong class="section_header">Contact:</strong> {{contact}} <br>
+            <strong class="section_header">Email:</strong> {{email}} <br>
+            
+            <div class="social">
+                <div class="links"><a href="{{link}}">{{link}}</a></div>
+                <div class="links"><a href="{{git}}">{{git}}</a><br></div>
+              
+        </div>
+        </p>
+    </div>
+    <hr>
+    <div class="content_section floating_element">
+
+        <div class="section_header">
+            PERSONAL DETAILS
+        </div>
+        <div class="content_section_text">
+            <p>
+                <!--  <strong>Father’s Name:</strong> {{fathername}}<br>  -->
+                <strong>Permanent Address:</strong> {{address}}<br>
+                <strong>Date of Birth:</strong> {{dob}}<br>
+                <strong>Languages Known:</strong> {{lang}}<br>
+            </p>
+        </div>
+        <hr>
+        <div class="section_header EDUCATION">
+        EXPERIENCE:
+        </div>
+        <div class="content_section_text education">
+            <div class="college">
+                <p class="clg">{{company}}</p>
+                <p>{{cp}}</p>
+        </div>
+    
+    <div class="location">
+        <p class="clg">{{cl}}</p>
+        <p>{{cy}}</p>
+    </div>
+    </div>
+    <div class="content_section_text education">
+    {% if 'fields_added2 == 1' %}
+    <div class="college">
+        <p class="clg">{{newjob0}}</p>
+        <p>{{newjob1}}</p>
+    </div>
+
+    <div class="location">
+<p class="clg">{{newjob2}}</p>
+<p>{{newjob3}}</p>
+    </div>
+{% else %}
+
+{% endif %}
+</div>
+    <hr>
+        <div class="section_header EDUCATION">
+            EDUCATION:
+        </div>
+        <div class="content_section_text education">
+            <div class="college">
+            <p class="clg">{{gb}} </p>
+            <p>{{gs}}  /  {{cgpa}}</p>
+        </div>
+        <div class="location">
+            <p class="clg">{{gp}}</p>
+            <p>{{gm}}</p>
+        </div>
+        
+           </div> 
+
+           <div class="content_section_text education">
+            {% if 'fields_added == 1' %}
+        <div class="college">
+            <p class="clg">{{newField0}} </p>
+            <p>{{newField1}}   {{newField2}}</p>
+        </div>
+        <div class="location">
+            <p class="clg">{{newField3}}</p>
+            <p>{{newField4}}</p>
+        </div>
+{% else %}
+    
+{% endif %}
+           </div>
+<hr>
+        <div class="section_header">
+            PROJECTS UNDERTAKEN
+        </div>
+        <div class="content_section_text education">
+            <div class="clg">
+                <p>{{projects}}</p></div>
+            <div class="">
+                <a  class="links" href="{{links}}">link</a></p></div>
+        </div>
+        {% if 'fields_added3 == 1' %}
+        <div class="content_section_text education">
+        <div class="clg">
+            <p>{{newp0}}</p></div>
+        <div class="">
+            <a  class="links" href="{{newp1}}">link</a></p></div>
+    </div>  
+</div>
+{% else %}
+
+{% endif %}
+<hr>
+        <div class="section_header">
+            SKILLS
+        </div>
+        <div class="content_section_text">
+            {{skills}}
+        </div>
+<hr>
+        
+        
+
+    </div>
+</div>
+<center> 
+    <button  onclick="print()" class="noPrint"  id="generate_pdf">Save Pdf</button>
+    <!--<a onclick="shareOnWhatsApp()" href="#" class="noPrint"  id="generate_pdf whatsappShareLink">Generate pdf</a>-->
+    </center>
+
+
+
+<script>
+   
+
+function shareOnWhatsApp() {
+    // Get the current page URL
+    var currentPageUrl = encodeURIComponent(window.location.href);
+    
+    // Construct the WhatsApp share URL
+    var whatsappShareUrl = 'whatsapp://send?text=' + currentPageUrl;
+    
+    // Open WhatsApp with the share URL
+    window.location.href = whatsappShareUrl;
+}
+</script>
+</body>
+</html>
+
+   
+    
+  
+    
+  
+       
+
+
+  

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='options.css') }}">
+</head>
+<style>
+  .box{
+    background-color: #00010c;
+    color: whitesmoke;
+
+}
+
+
+body{
+    background-color: #141412;
+    
+}
+
+.educational{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+ul{
+  list-style-type: none;
+}
+</style>
+<body>
+  <div class="personal box">
+    <p>
+      <h3>Personal Details:-</h3>
+      <strong class="section_header">Name:</strong> {{name}} <br>
+      <strong class="section_header">Contact:</strong> {{contact}} <br>
+      <strong class="section_header">Email:</strong> {{email}} <br>
+  </p>
+  </div>
+
+  <div class="educational box">
+    
+      <h3>Education details:- {{name}}</h3>  <br>
+
+      <div class="grad">
+      <strong >Graduation:</strong> {{contact}} <br>
+      <ul>
+        <li>Board/University: </li>{{gb}}
+        <li>Passing Year: </li>{{gp}}
+        <li>Percentage:  </li>{{gm}}
+      </ul>
+    </div>
+         <div class="12">
+      <strong >HSC</strong> {{email}} <br>
+      <ul>
+        <li>Board/University: </li>{{gb}}
+        <li>Passing Year: </li>{{gp}}
+        <li>Percentage:  </li>{{gm}}
+      </ul>
+    </div>  
+    <div class="10">
+      <strong >SSC</strong> {{email}} <br>
+      <ul>
+        <li>Board/University: </li>{{gb}}
+        <li>Passing Year: </li>{{gp}}
+        <li>Percentage:  </li>{{gm}}
+      </ul>
+    </div>
+  </p>
+    <div class="projects box">
+
+    </div>
+  </div>
+</body>
+</html>
