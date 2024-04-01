@@ -173,7 +173,7 @@
                 <p><strong> Company:</strong>&nbsp; {{ row[1]}}</p>
                 <p><strong>Location:</strong>&nbsp; {{ row[4] }}</p>
                 <p><strong>Salary:</strong>&nbsp; ₹{{ row[3] }}</p>
-                <div class="action"><a class="connect" href="mailto:{{row[5]}}?subject=Your%20Subject&body=Your%20Message">Connect</a></div>
+                <div class="action"><a class="connect" href={{row[5]}}>Connect</a></div>
             </div>
         {% endfor %}
     </div>

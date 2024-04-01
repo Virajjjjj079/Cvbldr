@@ -19,3 +19,5 @@ CREATE TABLE employees (
     email VARCHAR(200)
 );
 SELECT * from employees;
+SET SQL_SAFE_UPDATES = 0;
+
